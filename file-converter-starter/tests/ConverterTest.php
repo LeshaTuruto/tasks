@@ -20,7 +20,7 @@ class ConverterTest extends TestCase
         $converter->convert($file, 'json', $outputFilePath);
 
         $this->assertSame(
-            '{"a": 1, "b": "string", "c": {"nested": true}}',
+            '{"a":1,"b":"string","c":{"nested":true}}',
             file_get_contents($outputFilePath)
         );
     }
@@ -71,6 +71,6 @@ FILE
 
     private function getConverter()
     {
-        return new Converter(/* ??? */);
+        return new Converter(__DIR__.'/ini.txt');
     }
 }
